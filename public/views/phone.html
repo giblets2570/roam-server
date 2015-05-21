@@ -1,0 +1,100 @@
+<div class='col-xs-6'>
+    <h2>Phone</h2>
+    <div class='row'>
+        <div class='col-xs-6'>
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    Phone Number: {{ phoneNumber }}<br/>
+                    Business: {{ business }}<br/>
+                    Address: {{ address }}<br/>
+                </div>
+                <a href="" ng-click="getNextNumber()">
+                    <div class="panel-footer">Get next number</div>
+                </a>
+            </div>
+        </div>
+        <div class='col-xs-6'>
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="input-group">
+                        <input type="text" ng-model="newNumber" class="form-control"  aria-describedby="basic-addon1" autocomplete="off" placeholder="Number...">
+                    </div>
+                    <div class="input-group">
+                        <input type="text" ng-model="newBusiness" class="form-control" aria-describedby="basic-addon1" autocomplete="off" placeholder="Business...">
+                    </div>
+                    <div class="input-group">
+                        <input type="text" ng-model="newAddress" class="form-control" aria-describedby="basic-addon1" autocomplete="off" placeholder="Address...">
+                    </div>
+                </div>
+                <a href="" ng-click="addNewNumber(newNumber,newBusiness,newAddress)">
+                    <div class="panel-footer">Custom number</div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <a href="" ng-click="call()">
+        <div class="alert col-xs-6" id="call-button">Call</div>
+    </a>
+    <a href="" ng-click="hangUp()">
+        <div class="alert col-xs-6" id="hang-up-button">Hang-up</div>
+    </a>
+    <div class="alert alert-info" id="call-status">{{ log }}</div>
+
+    <form name="myForm" >
+        <div class="row">
+            <div class="col-sm-4">
+                Picked up:
+                <ul>
+                    <li>
+                        <input type="radio" ng-model="pickedup" value='true'> Yes
+                    </li>
+                    <li>
+                        <input type="radio" ng-model="pickedup" value='false'> No
+                    </li>
+                </ul>
+            </div>
+            <div class="col-sm-4">
+                Lead:
+                <ul>
+                    <li>
+                        <input type="radio" ng-model="lead" value='true'> Yes
+                    </li>
+                    <li>
+                        <input type="radio" ng-model="lead" value='false'> No
+                    </li>
+                </ul>
+            </div>
+            <div class="col-sm-4">
+                Enthusiasm:
+                <div class="col-sm-1">
+                    <input type="radio" ng-model="enthusiasm" value="0"> 0 <br/>
+                </div>
+                <div class="col-sm-1">
+                    <input type="radio" ng-model="enthusiasm" value="1"> 1 <br/>
+                </div>
+                <div class="col-sm-1">
+                    <input type="radio" ng-model="enthusiasm" value="2"> 2 <br/>
+                </div>
+                <div class="col-sm-1">
+                    <input type="radio" ng-model="enthusiasm" value="3"> 3 <br/>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">Call notes</div>
+            <!-- <div class="panel-body"> -->
+                <textarea class="form-control panel-body" rows="10" id="phoneCallNotes" ng-model="phoneCallNotes"></textarea>
+            <!-- </div> -->
+            <a href="" ng-click="addNotes()">
+                <div class="panel-footer">Add notes</div>
+            </a>
+        </div>
+
+        <!-- <div>
+            <label for="notes">Notes:</label>
+            <textarea class="form-control" rows="10" id="phoneCallNotes" ng-model="phoneCallNotes"></textarea>
+        </div>
+        <button type="button" class="btn btn-primary" ng-click="addNotes()">Add notes</button> -->
+        <!-- <button type="button" class="btn btn-primary" ng-click="getNotes()">Get notes</button> -->
+    </form>
+</div>
